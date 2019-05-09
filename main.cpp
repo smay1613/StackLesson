@@ -3,10 +3,6 @@
 #include <vector>
 #include <set>
 
-//Make the function that will validate the count of the brackets and
-//if each opens bracket will have the close bracket (like () or (((())))) -
-//the validation must be true, in other way (like (( or )( or ()()))) - must be false.
-
 template<class T, class C = typename std::stack<T>::container_type>
 class hackedStack : public std::stack<T, C>
 {
