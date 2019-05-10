@@ -3,6 +3,10 @@
 #include <vector>
 #include <set>
 
+//extern "C" {
+//    // C functions
+//}
+
 template<class T, class C = typename std::stack<T>::container_type>
 class hackedStack : public std::stack<T, C>
 {
@@ -19,20 +23,22 @@ void investigateStackConstructor()
     std::stack<int> stackExample {}; // but std::deque is optimal for us - performance as in vector, but without realloc
     hackedStack<int> hackedStackExample {}; // lets hack the stack!
 
-    // Oh....
-//    std::stack<std::string> booksPillar {
-//        "Stroustrup",
-//        "Meyers"
-//    };
 
     std::cout << typeid (hackedStackExample.c).name() << std::endl; // here you will see the mangled name
 
     hackedStackExample.push(187);
     hackedStackExample.push(190);
 
+
     for (const auto& hackedValue : hackedStackExample.c) { // hehe
         std::cout << hackedValue << std::endl;
     }
+
+    // Oh....
+//    std::stack<std::string> booksPillar {
+//        "Stroustrup",
+//        "Meyers"
+//    };
 }
 
 void investigateOperations() {
