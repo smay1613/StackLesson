@@ -17,8 +17,7 @@ public:
 
 void investigateStackConstructor()
 {
-    std::stack<int, std::vector<int>> vectorStack {};
-    std::stack<int, std::set<int>> customizedStack {}; // here we can use any container that provides back(), push_back(), pop_back()
+    std::stack<int, std::vector<int>> vectorStack {}; // here we can use any container that provides back(), push_back(), pop_back()
 
     std::stack<int> stackExample {}; // but std::deque is optimal for us - performance as in vector, but without realloc
     hackedStack<int> hackedStackExample {}; // lets hack the stack!
